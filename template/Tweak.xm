@@ -1,14 +1,13 @@
 #import "Macros.h"
 
-// ل ڤێرێ ناڤ و دوگمەیێن مینیۆیێ دیار دکەین
+// ل ڤێرێ ناڤێ مینیۆیێ و دوگمەیان دیار دکەین
 void setup() {
     
-    // ناڤێ مینیۆیێ کو د یارییێ دا دیار دبیت
+    // ناڤێ مینیۆیا تە ل ناڤ یارییێ
     [menu setTitle:@"Yusuf Mod Menu"];
     
-    // زێدەکرنا دوگمەیان
-    [menu addSwitch:@"High Jump" description:@"Jump higher than normal"];
-    [menu addSwitch:@"Speed Hack" description:@"Move very fast"];
+    // زێدەکرنا دوگمەیەکێ (Switch) بۆ تاقی کرنێ
+    [menu addSwitch:@"High Jump" description:@"Jump very high"];
     
     // ناڤێ گەشەپێدەری
     [menu addLabel:@"Developed by Yusuf"];
