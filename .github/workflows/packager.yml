@@ -11,7 +11,7 @@ jobs:
       - name: Setup Theos
         run: |
           git clone --recursive https://github.com/theos/theos.git ~/theos
-          # ل ڤێرێ من لینکێ نوو یێ SDK دانا دا ئەرۆر نەمینیت
+          # لینکێ دروست یێ SDK
           curl -LO https://github.com/theos/sdks/raw/master/iPhoneOS14.5.sdk.tar.xz
           mkdir -p ~/theos/sdks
           tar -xf iPhoneOS14.5.sdk.tar.xz -C ~/theos/sdks/
@@ -20,11 +20,10 @@ jobs:
       - name: Build
         run: |
           export THEOS=~/theos
-          # ئەگەر Makefile د ناڤ فۆڵدەرێ template دایە
           cd template && make package FINALPACKAGE=1
           
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: My-Mod-Menu-File
+          name: Yusuf-Mod-Menu
           path: template/packages/*.deb
