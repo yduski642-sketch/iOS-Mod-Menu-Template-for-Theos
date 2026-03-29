@@ -11,7 +11,7 @@ jobs:
       - name: Setup Theos
         run: |
           git clone --recursive https://github.com/theos/theos.git ~/theos
-          # لینکێ دروست یێ SDK
+          # ئەڤە ئەو لینکێ نوویە کو ئەرۆرێ نادات
           curl -LO https://github.com/theos/sdks/raw/master/iPhoneOS14.5.sdk.tar.xz
           mkdir -p ~/theos/sdks
           tar -xf iPhoneOS14.5.sdk.tar.xz -C ~/theos/sdks/
@@ -20,6 +20,7 @@ jobs:
       - name: Build
         run: |
           export THEOS=~/theos
+          # چونکی فایلێن تە د ناڤ فۆڵدەرێ template دانە
           cd template && make package FINALPACKAGE=1
           
       - name: Upload
