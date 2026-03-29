@@ -3,7 +3,7 @@ Name: YusufModMenu
 Depends: mobilesubstrate
 Version: 1.0
 Architecture: iphoneos-arm
-Description: Yusuf Mod Menu for iOS
+Description: Yusuf Mod Menu
 Maintainer: Yusuf
 Author: Yusuf
 Section: Tweaks
