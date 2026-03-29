@@ -5,17 +5,23 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
       - name: Setup Theos
         run: |
           git clone --recursive https://github.com/theos/theos.git ~/theos
           curl -kL https://github.com/theos/sdks/raw/master/iPhoneOS14.5.sdk.tar.xz -o sdk.tar.xz
           mkdir -p ~/theos/sdks && tar -xf sdk.tar.xz -C ~/theos/sdks/
           echo "THEOS=~/theos" >> $GITHUB_ENV
+
       - name: Build
         run: |
+          export THEOS=~/theos
           make package FINALPACKAGE=1
+          
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: MyMenu-iOS
+          name: My-Mod-Menu
           path: packages/*.deb
