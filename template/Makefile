@@ -5,7 +5,8 @@ FINALPACKAGE = 1
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = MyModMenu
-MyModMenu_FILES = Tweak.x $(wildcard *.mm) $(wildcard *.m)
-MyModMenu_FRAMEWORKS = UIKit QuartzCore CoreGraphics
+# ئەڤە هەمی فایلێن .mm و .m د ناڤ فۆڵدەرێ template دا دبینیت
+MyModMenu_FILES = Tweak.x $(wildcard template/*.mm) $(wildcard template/*.m)
+MyModMenu_FRAMEWORKS = UIKit QuartzCore
 
 include $(THEOS_makefiles)/tweak.mk
